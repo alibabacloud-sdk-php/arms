@@ -9,11 +9,11 @@ use AlibabaCloud\ApiResolverTrait;
  *
  * @package   AlibabaCloud\ARMS\V20181015
  *
- * @method static ARMSApiResolver aRMSApiResolver(array $options = [])
- * @method static ARMSQueryDataSet aRMSQueryDataSet(array $options = [])
- * @method static MetricQuery metricQuery(array $options = [])
+ * @method ARMSApiResolver aRMSApiResolver(array $options = [])
+ * @method ARMSQueryDataSet aRMSQueryDataSet(array $options = [])
+ * @method MetricQuery metricQuery(array $options = [])
  */
-class ARMS
+class ARMSApiResolver
 {
     use ApiResolverTrait;
 }

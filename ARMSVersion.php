@@ -9,9 +9,9 @@ use AlibabaCloud\VersionResolverTrait;
  *
  * @package   AlibabaCloud\ARMS
  *
- * @method V20181015\ARMSApiResolver v20181015()
+ * @method static V20181015\ARMSApiResolver v20181015()
  */
-class ARMS
+class ARMSVersion
 {
     use VersionResolverTrait;
 }
