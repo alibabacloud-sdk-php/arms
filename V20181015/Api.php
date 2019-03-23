@@ -2,7 +2,19 @@
 
 namespace AlibabaCloud\ARMS\V20181015;
 
+use AlibabaCloud\ApiResolverTrait;
 use AlibabaCloud\Rpc;
+
+/**
+ * Resolve Api based on the method name.
+ *
+ * @method MetricQuery metricQuery(array $options = [])
+ * @method ARMSQueryDataSet aRMSQueryDataSet(array $options = [])
+ */
+class ARMSApiResolver
+{
+    use ApiResolverTrait;
+}
 
 class V20181015Rpc extends Rpc
 {
@@ -41,30 +53,30 @@ class MetricQuery extends V20181015Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $filters
      *
      * @return $this
      */
-    public function withFilters(array $value)
+    public function withFilters(array $filters)
     {
-        $this->data['Filters'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['Filters.' . ($i + 1) . '.Value'] = $value[$i]['Value'];
-            $this->options['query']['Filters.' . ($i + 1) . '.Key'] = $value[$i]['Key'];
+        $this->data['Filters'] = $filters;
+        foreach ($filters as $depth1 => $depth1Value) {
+            $this->options['query']['Filters.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+            $this->options['query']['Filters.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
         }
 
         return $this;
     }
 
     /**
-     * @param array $value
+     * @param array $measures
      *
      * @return $this
      */
-    public function withMeasures(array $value)
+    public function withMeasures(array $measures)
     {
-        $this->data['Measures'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['Measures'] = $measures;
+        foreach ($measures as $i => $iValue) {
             $this->options['query']['Measures.' . ($i + 1)] = $iValue;
         }
 
@@ -72,14 +84,14 @@ class MetricQuery extends V20181015Rpc
     }
 
     /**
-     * @param array $value
+     * @param array $dimensions
      *
      * @return $this
      */
-    public function withDimensions(array $value)
+    public function withDimensions(array $dimensions)
     {
-        $this->data['Dimensions'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['Dimensions'] = $dimensions;
+        foreach ($dimensions as $i => $iValue) {
             $this->options['query']['Dimensions.' . ($i + 1)] = $iValue;
         }
 
@@ -119,31 +131,31 @@ class ARMSQueryDataSet extends V20181015Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $optionalDims
      *
      * @return $this
      */
-    public function withOptionalDims(array $value)
+    public function withOptionalDims(array $optionalDims)
     {
-        $this->data['OptionalDims'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['OptionalDims.' . ($i + 1) . '.Type'] = $value[$i]['Type'];
-            $this->options['query']['OptionalDims.' . ($i + 1) . '.Value'] = $value[$i]['Value'];
-            $this->options['query']['OptionalDims.' . ($i + 1) . '.Key'] = $value[$i]['Key'];
+        $this->data['OptionalDims'] = $optionalDims;
+        foreach ($optionalDims as $depth1 => $depth1Value) {
+            $this->options['query']['OptionalDims.' . ($depth1 + 1) . '.Type'] = $depth1Value['Type'];
+            $this->options['query']['OptionalDims.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+            $this->options['query']['OptionalDims.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
         }
 
         return $this;
     }
 
     /**
-     * @param array $value
+     * @param array $measures
      *
      * @return $this
      */
-    public function withMeasures(array $value)
+    public function withMeasures(array $measures)
     {
-        $this->data['Measures'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['Measures'] = $measures;
+        foreach ($measures as $i => $iValue) {
             $this->options['query']['Measures.' . ($i + 1)] = $iValue;
         }
 
@@ -151,34 +163,34 @@ class ARMSQueryDataSet extends V20181015Rpc
     }
 
     /**
-     * @param array $value
+     * @param array $requiredDims
      *
      * @return $this
      */
-    public function withRequiredDims(array $value)
+    public function withRequiredDims(array $requiredDims)
     {
-        $this->data['RequiredDims'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['RequiredDims.' . ($i + 1) . '.Type'] = $value[$i]['Type'];
-            $this->options['query']['RequiredDims.' . ($i + 1) . '.Value'] = $value[$i]['Value'];
-            $this->options['query']['RequiredDims.' . ($i + 1) . '.Key'] = $value[$i]['Key'];
+        $this->data['RequiredDims'] = $requiredDims;
+        foreach ($requiredDims as $depth1 => $depth1Value) {
+            $this->options['query']['RequiredDims.' . ($depth1 + 1) . '.Type'] = $depth1Value['Type'];
+            $this->options['query']['RequiredDims.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+            $this->options['query']['RequiredDims.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
         }
 
         return $this;
     }
 
     /**
-     * @param array $value
+     * @param array $dimensions
      *
      * @return $this
      */
-    public function withDimensions(array $value)
+    public function withDimensions(array $dimensions)
     {
-        $this->data['Dimensions'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['Dimensions.' . ($i + 1) . '.Type'] = $value[$i]['Type'];
-            $this->options['query']['Dimensions.' . ($i + 1) . '.Value'] = $value[$i]['Value'];
-            $this->options['query']['Dimensions.' . ($i + 1) . '.Key'] = $value[$i]['Key'];
+        $this->data['Dimensions'] = $dimensions;
+        foreach ($dimensions as $depth1 => $depth1Value) {
+            $this->options['query']['Dimensions.' . ($depth1 + 1) . '.Type'] = $depth1Value['Type'];
+            $this->options['query']['Dimensions.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+            $this->options['query']['Dimensions.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
         }
 
         return $this;
