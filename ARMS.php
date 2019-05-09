@@ -5,8 +5,8 @@ namespace AlibabaCloud\ARMS;
 use AlibabaCloud\Client\Resolver\VersionResolver;
 
 /**
- * @deprecated
+ * @method static V20181015\ARMSApiResolver v20181015()
  */
-class ARMSVersion extends VersionResolver
+class ARMS extends VersionResolver
 {
 }
