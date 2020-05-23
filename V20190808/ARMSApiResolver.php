@@ -7,6 +7,8 @@ use AlibabaCloud\Client\Resolver\ApiResolver;
 /**
  * @method AddGrafana addGrafana(array $options = [])
  * @method AddIntegration addIntegration(array $options = [])
+ * @method CheckDataConsistency checkDataConsistency(array $options = [])
+ * @method CheckServiceLinkedRoleForDeleting checkServiceLinkedRoleForDeleting(array $options = [])
  * @method CreateAlertContact createAlertContact(array $options = [])
  * @method CreateAlertContactGroup createAlertContactGroup(array $options = [])
  * @method CreateRetcodeApp createRetcodeApp(array $options = [])
@@ -14,12 +16,14 @@ use AlibabaCloud\Client\Resolver\ApiResolver;
  * @method DeleteAlertContactGroup deleteAlertContactGroup(array $options = [])
  * @method DeleteAlertRules deleteAlertRules(array $options = [])
  * @method DeleteRetcodeApp deleteRetcodeApp(array $options = [])
+ * @method GetConsistencySnapshot getConsistencySnapshot(array $options = [])
  * @method GetPrometheusApiToken getPrometheusApiToken(array $options = [])
  * @method GetRetcodeShareUrl getRetcodeShareUrl(array $options = [])
  * @method GetTrace getTrace(array $options = [])
  * @method ImportAppAlertRules importAppAlertRules(array $options = [])
  * @method ImportCustomAlertRules importCustomAlertRules(array $options = [])
  * @method ListClusterFromGrafana listClusterFromGrafana(array $options = [])
+ * @method ListDashboards listDashboards(array $options = [])
  * @method ListPromClusters listPromClusters(array $options = [])
  * @method ListRetcodeApps listRetcodeApps(array $options = [])
  * @method ListTraceApps listTraceApps(array $options = [])
@@ -77,6 +81,34 @@ class AddGrafana extends Rpc
  * @method $this withClusterId($value)
  */
 class AddIntegration extends Rpc
+{
+}
+
+/**
+ * @method string getCurrentTimestamp()
+ * @method $this withCurrentTimestamp($value)
+ * @method string getAppType()
+ * @method $this withAppType($value)
+ * @method string getPid()
+ * @method $this withPid($value)
+ * @method string getProxyUserId()
+ * @method $this withProxyUserId($value)
+ */
+class CheckDataConsistency extends Rpc
+{
+}
+
+/**
+ * @method string getSPIRegionId()
+ * @method $this withSPIRegionId($value)
+ * @method string getRoleArn()
+ * @method $this withRoleArn($value)
+ * @method string getDeletionTaskId()
+ * @method $this withDeletionTaskId($value)
+ * @method string getServiceName()
+ * @method $this withServiceName($value)
+ */
+class CheckServiceLinkedRoleForDeleting extends Rpc
 {
 }
 
@@ -158,6 +190,20 @@ class DeleteRetcodeApp extends Rpc
 {
 }
 
+/**
+ * @method string getCurrentTimestamp()
+ * @method $this withCurrentTimestamp($value)
+ * @method string getAppType()
+ * @method $this withAppType($value)
+ * @method string getPid()
+ * @method $this withPid($value)
+ * @method string getProxyUserId()
+ * @method $this withProxyUserId($value)
+ */
+class GetConsistencySnapshot extends Rpc
+{
+}
+
 class GetPrometheusApiToken extends Rpc
 {
 }
@@ -211,6 +257,14 @@ class ImportCustomAlertRules extends Rpc
 }
 
 class ListClusterFromGrafana extends Rpc
+{
+}
+
+/**
+ * @method string getClusterId()
+ * @method $this withClusterId($value)
+ */
+class ListDashboards extends Rpc
 {
 }
 
@@ -347,6 +401,8 @@ class QueryDataset extends Rpc
 }
 
 /**
+ * @method string getConsistencyQueryStrategy()
+ * @method $this withConsistencyQueryStrategy($value)
  * @method string getEndTime()
  * @method $this withEndTime($value)
  * @method string getOrderBy()
@@ -354,6 +410,8 @@ class QueryDataset extends Rpc
  * @method string getStartTime()
  * @method $this withStartTime($value)
  * @method array getFilters()
+ * @method string getConsistencyDataKey()
+ * @method $this withConsistencyDataKey($value)
  * @method string getProxyUserId()
  * @method $this withProxyUserId($value)
  * @method array getMeasures()
